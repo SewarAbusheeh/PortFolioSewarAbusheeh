@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PortFolioSewar.Models.Portfolio>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main id="main">
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p></p>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item ">
+                        <div class="portfolio-wrap">
+                            <img src="@Url.Content("~/"+item.Img)" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="@Url.Content("~/"+item.Img)" data-gallery="portfolioGallery" class="portfolio-lightbox" title=@item.ProjectName><i class="bx bx-plus"></i></a>
+                                <a asp-action="Portfoliodetails" asp-controller="Portfolio" asp-route-id="@item.PortfolioId" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                }
+
+            </div>
+            </div>
+    </section>
+
+</main>

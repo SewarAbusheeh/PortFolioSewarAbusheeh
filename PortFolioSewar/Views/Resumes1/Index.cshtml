@@ -1,0 +1,74 @@
+﻿
+@model IEnumerable<PortFolioSewar.Models.Resume>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main id="main">
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Resume</h2>
+                <p></p>
+            </div>
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-6" data-aos="fade-up">
+
+                        <h3 class="resume-title">Sumary</h3>
+                        <div class="resume-item pb-0">
+                            <h4>Sewar Abusheeh</h4>
+                            <p><em>@item.Summarydesc</em></p>
+                            <ul>
+                                <li>@item.Address</li>
+                                <li>@item.phone</li>
+                                <li>@item.Eamil</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="resume-title">Education</h3>
+                        <div class="resume-item">
+                            <h4>Bachelor's degree in Computer Science</h4>
+                            <h5>2018 - 2022</h5>
+                            <p><em>Computer Science,YU</em></p>
+                            <p>@item.ExperienceDes</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title">Professional Experience</h3>
+                        <div class="resume-item">
+                            <h4>@item.ExperienceTitle</h4>
+                            <h5>2022 - Present</h5>
+                            @*<p><em>Jora </em></p>*@
+                        <ul>
+                            <li>@item.ExperienceDesc1</li>
+                            <li>@item.ExperienceDesc2</li>
+                            <li>@item.ExperienceDesc3</li>
+                            <li>@item.ExperienceDesc4</li>
+                            @*<li></li>*@
+                        </ul>
+                        </div>
+                        <div class="resume-item">
+                            <h4>@item.HoppyTitle</h4>
+                            <h5>2009 -Present </h5>
+                            @*<p><em>Stepping Stone Advertising, New York, NY</em></p>*@
+                            <ul>
+                                <li>@item.HoppyDesc1</li>
+                                <li>@item.HoppyDesc2</li>
+                                <li>@item.HoppyDesc3</li>
+                                @*<li>Created 4+ design presentations and proposals a month for clients and account managers</li>*@
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section><!-- End Resume Section -->
+</main>
